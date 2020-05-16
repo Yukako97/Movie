@@ -26,6 +26,16 @@
                 <%= image_tag "icon/Movie_logout.png" %>
               <% end %>
             </li>
+            <li>
+              <%= link_to new_movie_path do %>
+                <%= image_tag "icon/Movie_plus.png" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to movies_path do %>
+                <%= image_tag "icon/Movie_list.png" %>
+              <% end %>
+            </li>
           <% end %>
         </ul>
       </div>

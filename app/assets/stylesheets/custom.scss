@@ -1,3 +1,12 @@
+body {
+  background-color: #666666;
+}
+
+.top_img {
+  text-align: center;
+  height: 100px;
+}
+
 h1 {
   text-align:center;
   font-family: "Gill Sans", sans-serif;
@@ -7,6 +16,9 @@ h1 {
 
 .text-white {
   color: #fff;
+  font-family: "Gill Sans", sans-serif;
+  font-stretch: condensed;
+  font-weight: lighter;
 }
 
 .row {
@@ -62,7 +74,7 @@ h1 {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #464646;
+  background-color: #666666;
   
   .users-new-container {
     padding-top: 220px;
@@ -82,8 +94,9 @@ h1 {
 }
 
 .navbar-transparent {
-  margin-bottom: 0px;
-  background-color: rgba(0,0,0,0.5);
+  margin: 0px;
+  padding: 0px;
+  background-color: #FF1493;
   a {
     color: #fff !important;
   }
@@ -94,6 +107,79 @@ h1 {
   }
   
   img {
-    height: 40px;
+    margin: 10px 10px 10px 30px;
+    height: 50px;
+  }
+ 
+  ul {
+    display: flex;
+    float: right;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 30px 20px 10px;
+    
+    img {
+      margin: 15px 10px 10px 7px;
+      height: 25px;
+    }
+    
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+.movies-new-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #666666;
+  
+   .movies-new-container {
+    padding-top: 220px;
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.btn-block {
+  color: #FF1493;
+  border: 1px solid #FF1493;
+  padding: 0px;
+  font-size: 15px;
+  background-color: rgba(0,0,0,0.0);
+  
+  &:hover {
+    color: #FFFFFF;
+  }
+}
+
+.movie-new-wrapper {
+  padding-top: 120px;
+}
+
+.movie-index-wrapper {
+  background-color: #666666;
+  .movie-index-single {
+    background-color: #CCCCCC;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    border: 1px solid #FF1493;
+    border-radius: 3px;
+    .movie-author {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+  img {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 50%;
   }
 }

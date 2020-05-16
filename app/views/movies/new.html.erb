@@ -1,0 +1,23 @@
+<div class="movies-new-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 movies-new-container">
+        <h1 class="text-center text-white">映画登録</h1>
+        <%= form_for @movie do |f| %>
+          <div class="form-group">
+            <%= f.label :title, class: 'text-white' %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :image %>
+            <%= f.file_field :image%>
+          </div>
+          
+          <%= f.submit '登録', class: 'btn-block btn-white' %>
+          
+         <% end %>
+      </div>
+    </div>
+  </div>
+</div>

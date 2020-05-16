@@ -6,8 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Movie
+module MovieLog
   class Application < Rails::Application
+     config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
+     
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -16,4 +18,5 @@ module Movie
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+
 end
