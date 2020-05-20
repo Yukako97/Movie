@@ -1,0 +1,24 @@
+<div class="movies-new-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 movies-new-container">
+        <h1 class="text-center text-white">Movie Edit</h1>
+        <%= form_for @movie do |f| %>
+          <div class="form-group">
+            <%= f.label :title, class: 'text-white' %>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :image %>
+            <%= f.file_field :image%>
+          </div>
+          
+          <%= f.submit '変更', class: 'btn-block btn-white' %>
+          <%= link_to "削除する", movie_path(@movie.id), method: :delete %>
+          
+         <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,4 +3,6 @@ class Movie < ApplicationRecord
    validates :image, presence: true
    
    mount_uploader :image, ImageUploader
+   
+   has_many :reviews
 end
