@@ -36,6 +36,11 @@
                 <%= image_tag "icon/Movie_list.png" %>
               <% end %>
             </li>
+            <li>
+              <%= link_to user_path(current_user.id) do %>
+                <%= image_tag "icon/Movie_mypage.png" %>
+              <% end %>
+            </li>
           <% end %>
         </ul>
       </div>

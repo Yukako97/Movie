@@ -2,14 +2,11 @@
 <% if @movie.image? %>
   <%= image_tag(@movie.image_url) %>
 <% end %>
-<%= form_for @review do |f| %>
-  <%= f.hidden_field :movie_id, value: @movie.id %>
-  <%= f.text_field :body, class: "text-field" %>
-  <%= f.submit '投稿', class: "submit-btn" %>
-<% end %>
+<div class = "post-menus">
+    <%= link_to 'レビューを投稿する', new_review_path(movie_id: @movie.id) %>
+    <%= link_to '編集', edit_movie_path %>
+</div>
+
 <% @reviews.each do |r| %>
   <%= r.body %>
 <% end %>
-<div class = "post-menus">
-    <%= link_to '編集', edit_movie_path %>
-</div>
