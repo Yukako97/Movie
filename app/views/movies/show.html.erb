@@ -9,4 +9,5 @@
 
 <% @reviews.each do |r| %>
   <%= r.body %>
+  <%= link_to "削除", review_path(r.id), method: :delete %>
 <% end %>

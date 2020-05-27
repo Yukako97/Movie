@@ -9,8 +9,15 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.movie_id = params[:review][:movie_id]
     if @review.save
-      redirect_to movie_path
+      redirect_to movie_path(@review.movie)
     end
+  end
+  
+  def destroy
+    @review = Review.find(params[:id])
+    @movie = @review.movie
+    @review.delete
+    redirect_to movie_path(@movie)
   end
 
   private
