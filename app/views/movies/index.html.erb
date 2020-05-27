@@ -11,6 +11,10 @@
             <% if movie.image? %>
             <%= image_tag movie.image.url %>
             <% end %>
+            
+            <%= link_to favorites_path(movie_id: movie.id), method: :post do %>
+              <%= image_tag 'icon/Movie_heart_w.png', class: 'movie-index-icon' %>
+            <% end %>
           </div>
         </div>
       </div>
