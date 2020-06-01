@@ -14,4 +14,15 @@ class FavoritesController < ApplicationController
       redirect_to movies_path, danger: 'お気に入りに登録に失敗しました'
     end
   end
+  
+  def destroy
+    user = current_user
+    movie = Movie.find(params[:movie_id])
+    if favorite = Favorite.find_by(user_id: user.id,movie_id:movie.id)
+      favorite.delete
+      redirect_to movies_path, success: 'お気に入りから削除しました'
+    else
+      redirect_to movies_path
+    end
+  end
 end
