@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
     if favorite.save
       redirect_to movies_path, success: 'お気に入りに登録しました'
     else
-      redirect_to movies_path, danger: 'お気に入りに登録に失敗しました'
+      redirect_to movies_path, danger: 'お気に入りの登録に失敗しました'
     end
   end
   

@@ -20,8 +20,18 @@
                 <%= image_tag 'icon/Movie_heart_w.png', class: 'movie-index-icon' %>
               <% end %>  
             <% end %>
-  <!-- いいね数を表示 -->
             <%= movie.favorites.count %>
+            
+            <% if (movie.checks.select { current_user.id }).count > 0 %>
+              <%= link_to checks_path(movie_id: movie.id), method: :delete do %>
+                <%= image_tag 'icon/Movie_check_on.png', class: 'movie-index-icon' %>
+              <% end %>  
+            <% else %>
+              <%= link_to checks_path(movie_id: movie.id), method: :post do %>
+                <%= image_tag 'icon/Movie_check_off.png', class: 'movie-index-icon' %>
+              <% end %>  
+            <% end %>
+            <%= movie.checks.count %>
           </div>
         </div>
       </div>
