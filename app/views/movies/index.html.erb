@@ -1,39 +1,35 @@
 <h1 class="text-center text-white">Movie List</h1>
 <div class="movie-index-wrapper">
-  <div class="container">
+  <div class="movie-container">
     <% @movie.each do |movie| %>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="movie-index-single">
-            <h2 class="movie-author">
-              <%= link_to movie.title, movie_path(movie.id) %>
-            </h2>
-            <% if movie.image? %>
-            <%= image_tag movie.image.url %>
-            <% end %>
-            <% if (movie.favorites.select { current_user.id }).count > 0 %>
-              <%= link_to favorites_path(movie_id: movie.id), method: :delete do %>
-                <%= image_tag 'icon/Movie_heart_p.png', class: 'movie-index-icon' %>
-              <% end %>  
-            <% else %>
-              <%= link_to favorites_path(movie_id: movie.id), method: :post do %>
-                <%= image_tag 'icon/Movie_heart_w.png', class: 'movie-index-icon' %>
-              <% end %>  
-            <% end %>
-            <%= movie.favorites.count %>
+      <div class="movie-index-single">
+        <h2 class="movie-author">
+          <a><%= link_to movie.title, movie_path(movie.id) %></a>
+        </h2>
+        <% if movie.image? %>
+        <%= image_tag movie.image.url, class: 'movie-image' %>
+        <% end %>
+        <% if (movie.favorites.select { current_user.id }).count > 0 %>
+          <%= link_to favorites_path(movie_id: movie.id), method: :delete do %>
+            <%= image_tag 'icon/Movie_heart_p.png', class: 'movie-index-icon' %>
+          <% end %>
+        <% else %>
+          <%= link_to favorites_path(movie_id: movie.id), method: :post do %>
+            <%= image_tag 'icon/Movie_heart_w.png', class: 'movie-index-icon' %>
+        <% end %>
+        <%= movie.favorites.count %>
+        <% end %>
             
-            <% if (movie.checks.select { current_user.id }).count > 0 %>
-              <%= link_to checks_path(movie_id: movie.id), method: :delete do %>
-                <%= image_tag 'icon/Movie_check_on.png', class: 'movie-index-icon' %>
-              <% end %>  
-            <% else %>
-              <%= link_to checks_path(movie_id: movie.id), method: :post do %>
-                <%= image_tag 'icon/Movie_check_off.png', class: 'movie-index-icon' %>
-              <% end %>  
-            <% end %>
-            <%= movie.checks.count %>
-          </div>
-        </div>
+        <% if (movie.checks.select { current_user.id }).count > 0 %>
+          <%= link_to checks_path(movie_id: movie.id), method: :delete do %>
+            <%= image_tag 'icon/Movie_check_on.png', class: 'movie-index-icon' %>
+          <% end %>
+        <% else %>
+          <%= link_to checks_path(movie_id: movie.id), method: :post do %>
+            <%= image_tag 'icon/Movie_check_off.png', class: 'movie-index-icon' %>
+          <% end %>
+        <% end %>
+        <a><%= movie.checks.count %></a>
       </div>
     <% end %>
   </div>

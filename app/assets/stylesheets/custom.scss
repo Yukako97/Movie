@@ -12,6 +12,8 @@ h1 {
   font-family: "Gill Sans", sans-serif;
   font-stretch: condensed;
   font-weight: lighter;
+  font-size: 50px;
+  margin: 40px 0 10px 0;
 }
 
 .text-white {
@@ -90,13 +92,13 @@ h1 {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  
 }
 
 .navbar-transparent {
   margin: 0px;
   padding: 0px;
   background-color: #FF1493;
+  
   a {
     color: #fff !important;
   }
@@ -138,7 +140,7 @@ h1 {
   background-size: cover;
   background-color: #666666;
   
-   .movies-new-container {
+  .movies-new-container {
     padding-top: 220px;
     
     .form-group {
@@ -165,27 +167,61 @@ h1 {
 
 .movie-index-wrapper {
   background-color: #666666;
-  .movie-index-single {
-    background-color: #CCCCCC;
-    width: 50%;
-    padding-top: 20px;
-    padding-bottom: 0px;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    .movie-author {
-      padding-right: 20px;
-      padding-left: 20px;
+  
+  .movie-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    &:before {
+      content: "";
+      display: block;
+      width: 350px;
+      height: 0;
+      order: 1;
+    }
+    
+    &:after {
+      content: "";
+      display: block;
+      width: 350px;
+      height: 0px;
     }
   }
-  img {
-      margin-top: 10px;
-      margin-bottom: 20px;
-      width: 100%;
-  }
-  .movie-index-icon {
-    width: 50px; height: 50px;
-    object-fit: contain;
+  
+  .movie-index-single {
+    background-color: #CCCCCC;
+    width: 350px;
+    height: 600px;
+    padding-bottom: 10px;
+    margin: 20px 0px;
+    
+    .movie-author {
+      text-align: center;
+      margin: 20px 0 20px 0;
+      padding-right: 20px;
+      padding-left: 20px;
+      font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+      font-size: 27px;
+      
+      a {
+        text-decoration: none;
+      }
+    }
+    
+    .movie-image {
+      display: block;
+      margin: auto;
+      width: 300px;
+      height: 400px;
+      object-fit: contain;
+    }
+    
+    .movie-index-icon {
+      width: 30px; height: 30px;
+      object-fit: contain;
+      padding: 20px 20px;
+    }
   }
 }
 
