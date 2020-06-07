@@ -1,13 +1,21 @@
-<h1><%= @movie.title %></h1>
-<% if @movie.image? %>
-  <%= image_tag(@movie.image_url) %>
-<% end %>
-<div class = "post-menus">
-    <%= link_to 'レビューを投稿する', new_review_path(movie_id: @movie.id) %>
-    <%= link_to '編集', edit_movie_path %>
-</div>
+<div class="movie-show-wrapper">
+  <div class="movie-container">
+    <div class="movie-show-single">
+      <h2 class="movie-show-author">
+        <a><%= @movie.title %></a>
+      </h2>
+      <% if @movie.image? %>
+      <%= image_tag @movie.image.url, class: 'movie-image' %>
+      <% end %>
+    </div>
+  </div>
+  <div class = "post-menus">
+    <p><%= link_to 'レビューを投稿する', new_review_path(movie_id: @movie.id) %><p/>
+    <p><%= link_to '編集', edit_movie_path %></p>
+  </div>
 
-<% @reviews.each do |r| %>
-  <%= r.body %>
-  <%= link_to "削除", review_path(r.id), method: :delete %>
-<% end %>
+  <% @reviews.each do |r| %>
+    <%= r.body %>
+    <%= link_to "削除", review_path(r.id), method: :delete %>
+  <% end %>
+</div>

@@ -15,6 +15,7 @@ h1 {
   font-weight: lighter;
   font-size: 50px;
   margin: 40px 0 10px 0;
+  color: white;
 }
 
 .text-white {
@@ -98,7 +99,7 @@ h1 {
 .navbar-transparent {
   margin: 0px;
   padding: 0px;
-  background-color: #FF1493;
+  background-color: black;
   
   a {
     color: #fff !important;
@@ -123,7 +124,7 @@ h1 {
     
     img {
       margin: 15px 10px 10px 7px;
-      height: 25px;
+      height: 30px;
     }
     
     li {
@@ -135,6 +136,7 @@ h1 {
 .movies-new-wrapper {
   width: 100vw;
   height: 100vh;
+  padding-top: 120px;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -226,8 +228,43 @@ h1 {
   }
 }
 
+.movie-show-wrapper {
+  background-color: #111111;
+  
+  .movie-show-single {
+    width: 500px;
+    height: 700px;
+    padding-bottom: 10px;
+    margin: 50px 0px 20px 25px;
+    
+    .movie-image {
+      display: block;
+      margin: auto;
+      width: 400px;
+      height: 500px;
+      object-fit: contain;
+    }
+    
+    .movie-show-author {
+      text-align: center;
+      margin: 20px 0 20px 0;
+      padding-right: 20px;
+      padding-left: 20px;
+      font-size: 35px;
+      
+      a {
+        color: #FF1493;
+      }
+    }
+  }
+}
+
 .text-field {
   height: 30px;
   width: 300px;
   margin-top: 20px;
+}
+
+.count {
+  color: red;
 }
