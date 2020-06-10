@@ -1,6 +1,7 @@
 body {
   background-color: #111111;
   font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+
 }
 
 .top_img {
@@ -56,7 +57,7 @@ h1 {
 .top-hero-wrapper {
   width: 100vw;
   height: 100vh;
-  background-color: #666666;
+  background-color: #111111;
 }
 
 .top-hero-container {
@@ -78,7 +79,7 @@ h1 {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #666666;
+  background-color: #111111;
   
   .users-new-container {
     padding-top: 220px;
@@ -134,14 +135,12 @@ h1 {
 }
 
 .movies-new-wrapper {
-  width: 100vw;
-  height: 100vh;
   padding-top: 120px;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #666666;
+  background-color: #111111;
   
   .movies-new-container {
     padding-top: 220px;
@@ -193,22 +192,28 @@ h1 {
   }
   
   .movie-index-single {
-    background-color: #333333;
+    background-color: #111111;
     width: 350px;
     height: 600px;
     padding-bottom: 10px;
     margin: 20px 0px;
+    border: solid 0.1px #555555;
     
     .movie-author {
       text-align: center;
       margin: 20px 0 20px 0;
       padding-right: 20px;
       padding-left: 20px;
-      font-size: 27px;
+      font-size: 38px;
       
       a {
         text-decoration: none;
-        color: #FF1493;
+        text-shadow:
+          0.6px 0 0 #DDDDDD,
+          0 0.6px 0 #DDDDDD,
+          -0.6px 0 0 #DDDDDD,
+          0 -0.6px 0 #DDDDDD;
+        color: #111111;
       }
     }
     
@@ -229,19 +234,23 @@ h1 {
 }
 
 .movie-show-wrapper {
+  max-width: 100%;
+  max-height: 100%;
   background-color: #111111;
-  
+  position: absolute;
+
   .movie-show-single {
     width: 500px;
     height: 700px;
     padding-bottom: 10px;
-    margin: 50px 0px 20px 25px;
+    margin: 5px 0px 20px 30px;
+    float: left;
     
     .movie-image {
       display: block;
       margin: auto;
-      width: 400px;
-      height: 500px;
+      width: 350px;
+      height: 450px;
       object-fit: contain;
     }
     
@@ -250,15 +259,63 @@ h1 {
       margin: 20px 0 20px 0;
       padding-right: 20px;
       padding-left: 20px;
-      font-size: 35px;
+      font-size: 45px;
       
       a {
-        color: #FF1493;
+        text-shadow:
+          0.6px 0 0 #DDDDDD,
+          0 0.6px 0 #DDDDDD,
+          -0.6px 0 0 #DDDDDD,
+          0 -0.6px 0 #DDDDDD;
+        color: #111111;
       }
     }
   }
+  .movie-show-body {
+    width: 600px;
+    height: 700px;
+    padding-bottom: 10px;
+    margin: 75px 0px 20px 50px;
+    float: right;
+    
+    .movie-body-container {
+      width: 600px;
+      height: auto;
+      .movie-body-item {
+        width: 600px;
+        height: auto;
+        border-left: solid 3px #C299FF;
+        margin-left: 15px;
+        
+        h2 {
+          margin-left: 15px;
+          text-shadow:
+            0.6px 0 0 #DDDDDD,
+            0 0.6px 0 #DDDDDD,
+            -0.6px 0 0 #DDDDDD,
+            0 -0.6px 0 #DDDDDD;
+          color: #111111;
+          font-size: 25px;
+        }
+      }
+      .text-field {
+        width: 600px;
+        height: auto;
+        margin-left: 30px;
+        a {
+          color: white;
+        }
+      }
+    }
+    
+    p {
+      text-align: right;
+    }
+  }
+  .post-menus {
+    position: relative;
+  }
 }
-
 .text-field {
   height: 30px;
   width: 300px;

@@ -1,5 +1,5 @@
 <div class="movie-show-wrapper">
-  <div class="movie-container">
+  <div class="movie-show-container">
     <div class="movie-show-single">
       <h2 class="movie-show-author">
         <a><%= @movie.title %></a>
@@ -8,10 +8,44 @@
       <%= image_tag @movie.image.url, class: 'movie-image' %>
       <% end %>
     </div>
-  </div>
-  <div class = "post-menus">
-    <p><%= link_to 'レビューを投稿する', new_review_path(movie_id: @movie.id) %><p/>
-    <p><%= link_to '編集', edit_movie_path %></p>
+    <div class="movie-show-body">
+      <div class="movie-body-container">
+        <div class="movie-body-item">
+          <h2>あらすじ</h2>
+        </div>
+        <div class="text-field">
+          <a><%= @movie.synopsis %></a>
+        </div>
+      </div>
+      <div class="movie-body-container">
+        <div class="movie-body-item">
+          <h2>制作年</h2>
+        </div>
+        <div class="text-field">
+          <a><%= @movie.year %></a>
+        </div>
+      </div>
+      <div class="movie-body-container">
+        <div class="movie-body-item">
+          <h2>監督</h2>
+        </div>
+        <div class="text-field">
+          <a><%= @movie.director %></a>
+        </div>
+      </div>
+      <div class="movie-body-container">
+        <div class="movie-body-item">
+          <h2>キャスト</h2>
+        </div>
+        <div class="text-field">
+          <a><%= @movie.cast %></a>
+        </div>
+      </div>
+      <p><%= link_to '編集', edit_movie_path %></p>
+    </div>
+    <div class = "post-menus">
+      <p><%= link_to 'レビューを投稿する', new_review_path(movie_id: @movie.id) %></p>
+    </div>
   </div>
 
   <% @reviews.each do |r| %>
