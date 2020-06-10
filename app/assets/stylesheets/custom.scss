@@ -224,11 +224,19 @@ h1 {
       height: 400px;
       object-fit: contain;
     }
-    
-    .movie-index-icon {
-      width: 30px; height: 30px;
-      object-fit: contain;
-      padding: 20px 20px;
+    .movie-count {
+      width: 50px; height: 30px;
+      float: left;
+      margin: 40px 0 0 30px;
+      
+      .movie-index-icon {
+        width: 30px; height: 30px;
+        object-fit: contain;
+      }
+      .count {
+        color: white;
+        font-size: 13px;
+      }
     }
   }
 }
@@ -320,8 +328,4 @@ h1 {
   height: 30px;
   width: 300px;
   margin-top: 20px;
-}
-
-.count {
-  color: red;
 }
