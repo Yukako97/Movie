@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    @review.user.name = current_user.name
     @review.movie_id = params[:review][:movie_id]
     if @review.save
       redirect_to movie_path(@review.movie)

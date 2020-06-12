@@ -41,15 +41,26 @@
           <a><%= @movie.cast %></a>
         </div>
       </div>
-      <p><%= link_to '編集', edit_movie_path %></p>
-    </div>
-    <div class = "post-menus">
-      <p><%= link_to 'レビューを投稿する', new_review_path(movie_id: @movie.id) %></p>
+      <div class="post-menu">
+        <%= link_to "Edit", edit_movie_path, class:"edit-btn-border" %>
+      </div>
     </div>
   </div>
-
-  <% @reviews.each do |r| %>
-    <%= r.body %>
-    <%= link_to "削除", review_path(r.id), method: :delete %>
-  <% end %>
+  <div class="movie-review-container">
+    <div class="movie-review-title">
+      <a>映画レビュー(<%= @movie.reviews.count %>)</a>
+      <%= link_to 'レビュー投稿', new_review_path(movie_id: @movie.id), class:"review-btn-border" %>
+    </div>
+    <div class="movie-review-list">
+      <% @reviews.each do |r| %>
+        <div class="review-user-name">
+          <a><%= current_user.name %></a>
+          <%= link_to "レビュー削除", review_path(r.id), method: :delete, class:"review-btn-border" %>
+        </div>
+        <div class="review-body">
+          <a><%= r.body %></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
