@@ -1,0 +1,18 @@
+<div class="movie-index-wrapper">
+  <div class="container">
+    <% @wish_movies.each do |movie| %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="movie-index-single">
+            <h2 class="movie-author">
+              <%= link_to movie.title, movie_path(movie.id) %>
+              <% if movie.image? %>
+              <%= image_tag movie.image.url %>
+              <% end %>
+            </h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

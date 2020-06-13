@@ -33,6 +33,19 @@
           <% end %>
           <a class="count"><%= movie.checks.count %></a>
         </div>
+        
+        <div class="movie-count">
+          <% if (movie.wishes.select { current_user.id }).count > 0 %>
+            <%= link_to wishes_path(movie_id: movie.id), method: :delete do %>
+              <%= image_tag 'icon/Movie_wish_on.png', class: 'movie-index-icon' %>
+            <% end %>
+          <% else %>
+            <%= link_to wishes_path(movie_id: movie.id), method: :post do %>
+              <%= image_tag 'icon/Movie_wish_off.png', class: 'movie-index-icon' %>
+            <% end %>
+          <% end %>
+          <a class="count"><%= movie.wishes.count %></a>
+        </div>
       </div>
     <% end %>
   </div>

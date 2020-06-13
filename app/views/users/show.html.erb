@@ -8,6 +8,10 @@
 <%= link_to favorites_index_path do %>
   <p>Favorite Movies</p>
 <% end %>
+
+<%= link_to wishes_index_path do %>
+  <p>Wish List</p>
+<% end %>
   
 <%= link_to '編集', edit_user_path %>
 <%= link_to "削除", user_path(current_user.id), method: :delete %>

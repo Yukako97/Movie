@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   post '/checks', to: 'checks#create'
   delete '/checks',  to: 'checks#destroy'
   
+  get 'wishes/index'
+  post '/wishes', to: 'wishes#create'
+  delete '/wishes',  to: 'wishes#destroy'
+  
 end

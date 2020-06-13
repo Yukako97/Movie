@@ -7,4 +7,5 @@ class Movie < ApplicationRecord
    has_many :reviews, dependent: :destroy
    has_many :favorites
    has_many :checks
+   has_many :wishes
 end
