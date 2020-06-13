@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     @review.user.name = current_user.name
+    @review.user.image = current_user.image
     @review.movie_id = params[:review][:movie_id]
     if @review.save
       redirect_to movie_path(@review.movie)

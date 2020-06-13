@@ -265,6 +265,28 @@ h1 {
         object-fit: contain;
       }
       
+      .movie-count {
+        width: 300px;
+        height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        
+        .movie-show-count {
+          width: 60px; height: 40px;
+          float: left;
+          margin: 0 20px;
+          
+          .movie-show-icon {
+            width: 40px; height: 40px;
+            object-fit: contain;
+          }
+          .count {
+            color: white;
+            font-size: 13px;
+          }
+        }
+      }
       .movie-show-author {
         text-align: center;
         margin: 20px 0 20px 0;
@@ -375,6 +397,15 @@ h1 {
       clear: left;
       margin: 20px 0 50px 100px;
       
+      .user-icon {
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+        border-radius: 20px;
+        float: left;
+        margin-right: 40px;
+      }
+      
       .review-user-name {
         color: white;
         height: 50px;
@@ -402,6 +433,7 @@ h1 {
       
       .review-body {
         max-width: 100%;
+        margin-top: 10px;
         margin-bottom: 50px;
         
         a {
@@ -415,4 +447,11 @@ h1 {
   height: 30px;
   width: 300px;
   margin-top: 20px;
+}
+
+.user-icon {
+  height: 130px;
+  width: 130px;
+  object-fit: contain;
+  border-radius: 20px;
 }

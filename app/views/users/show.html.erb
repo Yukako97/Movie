@@ -1,6 +1,8 @@
 <p>MyPage <%= @user.name %></p>
 <% if @user.image? %>
-  <%= image_tag @user.image.url %>
+  <%= image_tag @user.image.url, class:"user-icon" %>
+<% else %>
+  <%= image_tag "User_no_image.png", class:"user-icon" %>
 <% end %>
 <%= link_to checks_index_path do %>
   <p>Check List</p>

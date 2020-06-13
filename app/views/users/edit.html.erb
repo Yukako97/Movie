@@ -26,7 +26,9 @@
           
           <div class="form-group">
             <% if @user.image? %>
-              <%= image_tag @user.image.url %>
+              <%= image_tag @user.image.url, class:"user-icon" %>
+            <% else %>
+              <%= image_tag "User_no_image.png", class:"user-icon" %>
             <% end %>
             <%= f.file_field :image %>
           </div>
