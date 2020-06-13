@@ -13,4 +13,5 @@ class User < ApplicationRecord
   has_many :favorite_movies, through: :favorites, source: 'movie'
   has_many :checks
   has_many :check_movies, through: :checks, source: 'movie'
+  mount_uploader :image, ImageUploader
 end
