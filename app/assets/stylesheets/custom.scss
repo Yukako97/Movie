@@ -174,11 +174,14 @@ h1 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     
     &:before {
       content: "";
       display: block;
-      width: 350px;
+      width: 250px;
       height: 0;
       order: 1;
     }
@@ -186,56 +189,51 @@ h1 {
     &:after {
       content: "";
       display: block;
-      width: 350px;
+      width: 250px;
       height: 0px;
     }
   }
   
   .movie-index-single {
     background-color: #111111;
-    width: 350px;
-    height: 600px;
+    width: 250px;
+    height: 390px;
     padding-bottom: 10px;
     margin: 20px 0px;
     border: solid 0.1px #555555;
     
     .movie-author {
       text-align: center;
-      margin: 20px 0 20px 0;
-      padding-right: 20px;
-      padding-left: 20px;
-      font-size: 38px;
+      margin: 20px 0 10px 0;
+      padding-right: auto;
+      padding-left: auto;
+      font-size: 15px;
       
       a {
         text-decoration: none;
-        text-shadow:
-          0.6px 0 0 #DDDDDD,
-          0 0.6px 0 #DDDDDD,
-          -0.6px 0 0 #DDDDDD,
-          0 -0.6px 0 #DDDDDD;
-        color: #111111;
+        color: white;
       }
     }
     
     .movie-image {
       display: block;
       margin: auto;
-      width: 300px;
-      height: 400px;
+      width: 200px;
+      height: 300px;
       object-fit: contain;
     }
     .movie-count {
-      width: 50px; height: 30px;
+      width: 40px; height: 20px;
       float: left;
-      margin: 40px 0 0 30px;
+      margin: 8px 0 0 33px;
       
       .movie-index-icon {
-        width: 30px; height: 30px;
+        width: 20px; height: 20px;
         object-fit: contain;
       }
       .count {
         color: white;
-        font-size: 13px;
+        font-size: 10px;
       }
     }
   }
@@ -251,7 +249,7 @@ h1 {
     height: 700px;
 
     .movie-show-single {
-      width: 50%;
+      width: 40%;
       height: 700px;
       padding-bottom: 10px;
       margin: 5px 0px 20px 0;
@@ -289,26 +287,21 @@ h1 {
       }
       .movie-show-author {
         text-align: center;
-        margin: 20px 0 20px 0;
+        margin: 50px 0 20px 0;
         padding-right: 20px;
         padding-left: 20px;
-        font-size: 45px;
+        font-size: 28px;
         
         a {
-          text-shadow:
-            0.6px 0 0 #DDDDDD,
-            0 0.6px 0 #DDDDDD,
-            -0.6px 0 0 #DDDDDD,
-            0 -0.6px 0 #DDDDDD;
-          color: #111111;
+          color: white;
         }
       }
     }
     .movie-show-body {
-      width: 50%;
+      width: 60%;
       height: auto;
       padding-bottom: 10px;
-      margin: 75px 0px 20px 0;
+      margin: 110px 0px 20px 0;
       float: right;
       
       .movie-body-container {
@@ -317,26 +310,23 @@ h1 {
         .movie-body-item {
           width: 600px;
           height: auto;
-          border-left: solid 3px #C299FF;
+          border-left: solid 3px #888888;
           margin-left: 20px;
           
-          h2 {
+          a {
             margin-left: 15px;
-            text-shadow:
-              0.6px 0 0 #DDDDDD,
-              0 0.6px 0 #DDDDDD,
-              -0.6px 0 0 #DDDDDD,
-              0 -0.6px 0 #DDDDDD;
-            color: #111111;
-            font-size: 25px;
+            color: white;
+            font-size: 20px;
           }
         }
         .text-field {
           width: 600px;
           height: auto;
-          margin-left: 30px;
+          margin-left: 40px;
+          margin-bottom: 40px;
           a {
             color: white;
+            font-size: 15px;
           }
         }
       }
@@ -371,7 +361,7 @@ h1 {
       margin-bottom: 20px;
       
       a {
-        font-size: 25px;
+        font-size: 23px;
         float: left;
         color: white;
       }

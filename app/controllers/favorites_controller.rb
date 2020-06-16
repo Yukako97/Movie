@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
     favorite.movie_id = params[:movie_id]
 
     if favorite.save
-      redirect_to movies_path, success: 'お気に入りに登録しました'
+      redirect_back fallback_location: movies_path, success: 'お気に入りに登録しました'
     else
       redirect_to movies_path, danger: 'お気に入りの登録に失敗しました'
     end
@@ -20,7 +20,7 @@ class FavoritesController < ApplicationController
     movie = Movie.find(params[:movie_id])
     if favorite = Favorite.find_by(user_id: user.id,movie_id:movie.id)
       favorite.delete
-      redirect_to movies_path, success: 'お気に入りから削除しました'
+      redirect_back fallback_location: movies_path, success: 'お気に入りから削除しました'
     else
       redirect_to movies_path
     end

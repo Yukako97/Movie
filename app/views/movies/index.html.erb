@@ -3,9 +3,9 @@
   <div class="movie-container">
     <% @movie.each do |movie| %>
       <div class="movie-index-single">
-        <h2 class="movie-author">
+        <div class="movie-author">
           <a><%= link_to movie.title, movie_path(movie.id) %></a>
-        </h2>
+        </div>
         <% if movie.image? %>
         <%= image_tag movie.image.url, class: 'movie-image' %>
         <% end %>

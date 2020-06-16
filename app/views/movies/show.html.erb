@@ -1,9 +1,9 @@
 <div class="movie-show-wrapper">
   <div class="movie-show-container">
     <div class="movie-show-single">
-      <h2 class="movie-show-author">
+      <div class="movie-show-author">
         <a><%= @movie.title %></a>
-      </h2>
+      </div>
       <% if @movie.image? %>
       <%= image_tag @movie.image.url, class: 'movie-image' %>
       <% end %>
@@ -49,7 +49,7 @@
     <div class="movie-show-body">
       <div class="movie-body-container">
         <div class="movie-body-item">
-          <h2>あらすじ</h2>
+          <a>あらすじ</a>
         </div>
         <div class="text-field">
           <a><%= @movie.synopsis %></a>
@@ -57,7 +57,7 @@
       </div>
       <div class="movie-body-container">
         <div class="movie-body-item">
-          <h2>制作年</h2>
+          <a>制作年</a>
         </div>
         <div class="text-field">
           <a><%= @movie.year %></a>
@@ -65,7 +65,7 @@
       </div>
       <div class="movie-body-container">
         <div class="movie-body-item">
-          <h2>監督</h2>
+          <a>監督</a>
         </div>
         <div class="text-field">
           <a><%= @movie.director %></a>
@@ -73,7 +73,7 @@
       </div>
       <div class="movie-body-container">
         <div class="movie-body-item">
-          <h2>キャスト</h2>
+          <a>キャスト</a>
         </div>
         <div class="text-field">
           <a><%= @movie.cast %></a>
@@ -90,7 +90,7 @@
       <%= link_to 'レビュー投稿', new_review_path(movie_id: @movie.id), class:"review-btn-border" %>
     </div>
     <div class="movie-review-list">
-      <% @reviews.each do |r| %>
+      <% @movie.reviews.each do |r| %>
         <% if r.user.image? %>
           <%= image_tag r.user.image.url, class:"user-icon" %>
         <% else %>

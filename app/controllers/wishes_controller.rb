@@ -9,7 +9,7 @@ class WishesController < ApplicationController
     wish.movie_id = params[:movie_id]
 
     if wish.save
-      redirect_to movies_path, success: 'Wishリストに登録しました'
+      redirect_back fallback_location: movies_path, success: 'Wishリストに登録しました'
     else
       redirect_to movies_path, danger: 'Wishリストの登録に失敗しました'
     end
@@ -20,7 +20,7 @@ class WishesController < ApplicationController
     movie = Movie.find(params[:movie_id])
     if wish = Wish.find_by(user_id: user.id,movie_id:movie.id)
       wish.delete
-      redirect_to movies_path, success: 'お気に入りから削除しました'
+      redirect_back fallback_location: movies_path, success: 'お気に入りから削除しました'
     else
       redirect_to movies_path
     end
