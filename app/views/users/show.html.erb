@@ -1,20 +1,26 @@
 <h1>My Page</h1>
-<p><%= @user.name %></p>
-<% if @user.image? %>
-  <%= image_tag @user.image.url, class:"user-icon" %>
-<% else %>
-  <%= image_tag "User_no_image.png", class:"user-icon" %>
-<% end %>
-<%= link_to checks_index_path do %>
-  <p>Check List</p>
-<% end %>
-<%= link_to favorites_index_path do %>
-  <p>Favorite Movies</p>
-<% end %>
-
-<%= link_to wishes_index_path do %>
-  <p>Wish List</p>
-<% end %>
+<def class="user-index-wrapper">
+  <def class="user-information">
+    <% if @user.image? %>
+      <%= image_tag @user.image.url, class:"user-icon" %>
+    <% else %>
+      <%= image_tag "User_no_image.png", class:"user-icon" %>
+    <% end %>
+    <a><%= @user.name %></a>
+    
+    <%= link_to '編集', edit_user_path, class:"user-btn-border"%>
+    <%= link_to "削除", user_path(current_user.id), method: :delete, class:"user-btn-border" %>
+  </def>
   
-<%= link_to '編集', edit_user_path %>
-<%= link_to "削除", user_path(current_user.id), method: :delete %>
+  <def class="user-option">
+    <%= link_to checks_index_path do %>
+      <p>Check List</p>
+    <% end %>
+    <%= link_to favorites_index_path do %>
+      <p>Favorite Movies</p>
+    <% end %>
+    
+    <%= link_to wishes_index_path do %>
+      <p>Wish List</p>
+    <% end %>
+</def>

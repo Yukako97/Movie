@@ -10,24 +10,17 @@
         <%= image_tag movie.image.url, class: 'movie-image' %>
         <% end %>
         <div class="movie-count">
-          <% if (movie.favorites.select { current_user.id }).count > 0 %>
-            <%= link_to favorites_path(movie_id: movie.id), method: :delete do %>
-              <%= image_tag 'icon/Movie_heart_p.png', class: 'movie-index-icon' %>
-            <% end %>
-          <% else %>
-            <%= link_to favorites_path(movie_id: movie.id), method: :post do %>
-              <%= image_tag 'icon/Movie_heart_w.png', class: 'movie-index-icon' %>
-            <% end %>
-          <% end %>
-          <a class="count"><%= movie.favorites.count %></a>
+          <div id="favorite_buttons_<%= movie.id %>">
+            <%= render partial: 'favorites/favorite', locals: {movie: movie} %>
+          </div>
         </div>
         <div class="movie-count">
           <% if (movie.checks.select { current_user.id }).count > 0 %>
-            <%= link_to checks_path(movie_id: movie.id), method: :delete do %>
+            <%= link_to checks_path(movie_id: movie.id), method: :delete, remote: true do %>
               <%= image_tag 'icon/Movie_check_on.png', class: 'movie-index-icon' %>
             <% end %>
           <% else %>
-            <%= link_to checks_path(movie_id: movie.id), method: :post do %>
+            <%= link_to checks_path(movie_id: movie.id), method: :post, remote: true do %>
               <%= image_tag 'icon/Movie_check_off.png', class: 'movie-index-icon' %>
             <% end %>
           <% end %>
@@ -36,11 +29,11 @@
         
         <div class="movie-count">
           <% if (movie.wishes.select { current_user.id }).count > 0 %>
-            <%= link_to wishes_path(movie_id: movie.id), method: :delete do %>
+            <%= link_to wishes_path(movie_id: movie.id), method: :delete, remote: true do %>
               <%= image_tag 'icon/Movie_wish_on.png', class: 'movie-index-icon' %>
             <% end %>
           <% else %>
-            <%= link_to wishes_path(movie_id: movie.id), method: :post do %>
+            <%= link_to wishes_path(movie_id: movie.id), method: :post, remote: true do %>
               <%= image_tag 'icon/Movie_wish_off.png', class: 'movie-index-icon' %>
             <% end %>
           <% end %>
