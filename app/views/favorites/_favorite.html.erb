@@ -1,4 +1,4 @@
-<% if (movie.favorites.select { current_user.id }).count > 0 %>
+<% if (!Favorite.find_by(user_id: current_user.id, movie_id: movie.id).nil?) %>
   <%= link_to favorites_path(movie_id: movie.id), method: :delete, remote: true do %>
     <%= image_tag 'icon/Movie_heart_p.png', class: 'movie-index-icon' %>
   <% end %>

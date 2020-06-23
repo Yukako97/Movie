@@ -1,0 +1,10 @@
+<% if (!Check.find_by(user_id: current_user.id, movie_id: movie.id).nil?) %>
+  <%= link_to checks_path(movie_id: movie.id), method: :delete, remote: true do %>
+    <%= image_tag 'icon/Movie_check_on.png', class: 'movie-index-icon' %>
+  <% end %>
+<% else %>
+  <%= link_to checks_path(movie_id: movie.id), method: :post, remote: true do %>
+    <%= image_tag 'icon/Movie_check_off.png', class: 'movie-index-icon' %>
+  <% end %>
+<% end %>
+<a class="count"><%= movie.checks.count %></a>

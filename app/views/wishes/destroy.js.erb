@@ -1,0 +1,1 @@
+$('#wish_buttons_<%= @movie.id %>').html("<%= j(render partial: 'wishes/wish', locals: {movie: @movie}) %>");
